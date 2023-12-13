@@ -1,0 +1,29 @@
+<h1>Movies</h1>
+
+<div class="row">
+  {{#each data}}
+    <div class="col-md-4">
+      <div class="card movie-card">
+        <img src="{{poster}}" class="card-img-top" alt="{{title}} Poster">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text"><strong>Plot:</strong> {{plot}}</ p>
+          <p class="card-text"><strong>Genres:</strong>
+            {{#each genres}}
+              {{this}}{{#unless @last}}, {{/unless}}
+            {{/each}}
+          </p>
+          <p class="card-text"><strong>Runtime:</strong> {{runtime}} minutes</p>
+          {{!-- <p class="card-text"><strong>Full Plot:</strong> {{fullplot}}</p> --}}
+          <p class="card-text"><strong>Languages:</strong>
+            {{#each languages}}
+              {{this}}{{#unless @last}}, {{/unless}}
+            {{/each}}
+          </p>
+          <p class="card-text"><strong>IMDb Rating:</strong> {{imdb.rating}}</p>
+          <p class="card-text"><strong>Tomatoes Viewer Rating:</strong> {{tomatoes.viewer.rating}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
